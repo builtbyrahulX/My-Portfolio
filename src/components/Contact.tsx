@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Code, ExternalLink, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Code, Loader2, CheckCircle, XCircle } from 'lucide-react';
 
 export function Contact() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');

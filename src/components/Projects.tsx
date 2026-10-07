@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowUpRight, Code, Star, GitFork, ExternalLink, Loader2 } from 'lucide-react';
+import { ArrowUpRight, Code, Star, GitFork, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Repo {

@@ -1,15 +1,8 @@
-import { useState } from 'react';
-import { Terminal, Copy, Check, FileText, Code, Mail } from 'lucide-react';
+
 import { motion } from 'framer-motion';
 
 export function Hero() {
-  const [copied, setCopied] = useState(false);
-  
-  const handleCopy = () => {
-    navigator.clipboard.writeText('rahuljangra070407@gmail.com');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,7 +17,7 @@ export function Hero() {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { type: "spring", stiffness: 50, damping: 20 }
+      transition: { type: "spring" as const, stiffness: 50, damping: 20 }
     }
   };
 
