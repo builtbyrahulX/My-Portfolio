@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --animate-grid-pan: grid-pan 5s linear infinite;
+  @keyframes grid-pan {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 4rem 4rem; }
+  }
+
+  --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  @apply bg-black text-zinc-100 antialiased;
+}
+
+/* Light mode hack for the checklist */
+body.light-mode {
+  background: white;
+}
+body.light-mode::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: invert(1) hue-rotate(180deg);
+  pointer-events: none;
+  z-index: 999999;
+}
+
+/* Print Stylesheet */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .animate-grid-pan, .animate-pulse-glow {
+    animation: none !important;
+    display: none !important;
+  }
+  header, footer, button, .fixed {
+    display: none !important;
+  }
+}
